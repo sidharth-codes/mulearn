@@ -1,0 +1,74 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background: #0f172a; /* dark base */
+    overflow-x: hidden;
+}
+
+/* GLOBAL BACKGROUND */
+.global-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* BLOBS */
+#up, #down, #left, #right {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.8;
+    animation: floatBlob 12s ease-in-out infinite;
+}
+
+#up {
+    background: linear-gradient(45deg, #7c3aed, #3b82f6);
+    top: -20%;
+    left: -10%;
+}
+
+#down {
+    background: linear-gradient(45deg, #9333ea, #ec4899);
+    bottom: -20%;
+    left: -10%;
+}
+
+#left {
+    background: linear-gradient(45deg, #6366f1, #06b6d4);
+    top: -20%;
+    right: -10%;
+}
+
+#right {
+    background: linear-gradient(45deg, #8b5cf6, #f43f5e);
+    bottom: -10%;
+    right: -10%;
+}
+
+/* Animation */
+@keyframes floatBlob {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+/* Page content above blobs */
+.page-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Join Button */
+.join-btn {
+    background-color: #6366f1;
+    transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+    background-color: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99,102,241,0.4);
+}
